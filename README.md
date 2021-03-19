@@ -15,12 +15,12 @@ This is a clone count badge shows 14 days clone statistics of a GitHub repositor
 ## Setup (~5 minute setup)
 1) Create a new workflow from the `Actions` tab of your repository and paste the following.
 ```yaml
-name: GitHub Clone Count for 14 days at every 8 hours
+name: GitHub Clone Count for 14 days at every 12 hours
 
 # Controls when the action will run. 
 on:
   schedule:
-    - cron: "0 */8 * * *"
+    - cron: "0 */12 * * *"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -48,7 +48,7 @@ jobs:
           git add .
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git commit -m "Automated clone.json update"
+          git commit -m "Automated clones count update."
           
       - name: Push
         uses: ad-m/github-push-action@master
